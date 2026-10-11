@@ -1,0 +1,3 @@
+import {MountedPutin} from './fictional-chase';
+import {journeyPosition} from '../lib/animation-story';
+export function JourneyTrack({step}:{step:number}){const position=journeyPosition(step);return <div className="journey-track" aria-hidden="true"><div className="journey-route"><span className="journey-traveler" style={{left:`${position/7*100}%`}}><svg viewBox="-45 -40 400 320"><MountedPutin/></svg></span>{Array.from({length:8},(_,i)=><span key={i} className={i<=position?'journey-stop reached':'journey-stop'}/>)}</div><div className="journey-labels"><span>THE CHASE</span><span>THE BUREAU</span></div></div>;}
